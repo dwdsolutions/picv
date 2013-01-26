@@ -2,13 +2,14 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>PICV</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le Styles -->
     <link href="css/styles.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -23,20 +24,40 @@
     <link rel="shortcut icon" href="img/ico/favicon.png">
   </head>
 
-  <body>
+  <body class="loginPage">
+
+    <header id="header">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">
+              Plataforma de Información Integral Contra la
+              Violencia Domestica
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <div class="container">
-
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Por favor identifiquese</h2>
-        <input type="text" class="input-block-level" placeholder="Nombre de usuario">
-        <input type="password" class="input-block-level" placeholder="Contraseña">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Recordar sesión
-        </label>
-        <button class="btn btn-info" type="submit">Entrar</button>
-      </form>
-
+      <div class="loginContainer">
+        <form class="form-signin" action="#" id="loginForm">
+          <div class="form-row">
+            <label>Usuario</label>
+            <input type="text" class="input-block-level" placeholder="Nombre de usuario">
+          </div>
+          <div class="form-row">
+            <label>Contraseña</label>
+            <input type="password" class="input-block-level" placeholder="Contraseña">
+          </div>
+          <div class="form-row form-actions">
+            <label class="controls left">
+              <input type="checkbox" value="remember-me"> Recordar sesión
+            </label>
+            <button class="btn btn-info right" type="submit" id="loginBtn">Entrar</button>
+          </div>
+        </form>
+      </div>
     </div> <!-- /container -->
 
     <!-- Required Scripts -->

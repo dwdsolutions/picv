@@ -1,0 +1,252 @@
+/* Table of Contents
+ * ==================================================
+ *  # Default start off style (Portrait)
+ *    - 320px Gutters  = Columns(4)
+ *
+ *  # Mobile (Landscape)
+ *    - 480px Gutters  = 30rem Columns(6)
+ *
+ *  # Small Tablet (Portrait)
+ *    - 600px Gutters  = 37.5re, Columns(8)
+ *
+ *  # Tablet (Portrait)
+ *    - 768px Gutters  = 48rem Columns(8)
+ *
+ *  # Small Tablet (Landscape)
+ *    - 800px Gutters  = 50rem Columns(8)
+ *
+ *  # Netbooks
+ *    - 980px Gutters  = 60rem Columns(12)
+ *
+ *  # Desktops and Widescreen laptops
+ *    - 1382px Gutters = 60rem Columns(12)
+ */
+
+$mobile_l: 30rem 6;
+$s_tablet_p: 37.5rem 8;
+$tablet: 48rem 8;
+$s_tablet_l: 50rem 8;
+$desktop: 60rem 12;
+
+// For develop
+.container {
+  //@include susy-grid-background;
+  //@include at-breakpoint($mobile_l) { @include susy-grid-background; }
+  //@include at-breakpoint($s_tablet_p) { @include susy-grid-background; }
+  //@include at-breakpoint($tablet) { @include susy-grid-background; }
+  //@include at-breakpoint($s_tablet_l) { @include susy-grid-background; }
+  //@include at-breakpoint($desktop) { @include susy-grid-background; }
+}
+
+
+
+/* # Default start off style (Portrait)
+   ================================================== */
+
+.row,
+.slides,
+.slider-wrap,
+#mainHeader,
+section[role=main],
+#footer,
+#footerTop,
+#footerBottom {
+  @include full;
+}
+
+@include border-box-sizing;
+
+.container {
+  @include container;
+  overflow: hidden;
+}
+
+.navbar {
+  .navbar-inner {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#logo-wrapper,
+#menu-wrapper,
+#breadcrumb-wrapper {
+  @include full;
+}
+
+#mainMenu {
+  width: 100%;
+  .nav {
+   @include hidden; 
+  }
+  .responsive-nav {
+    display: inline;
+    width: 100%;
+    padding: 0.18rem;
+    margin: 10px auto 10px auto;
+  }
+}
+
+section[role=main] {
+  margin: 40px 0;
+}
+
+#footerBottom {
+  .bottom1 {
+    text-align: center;
+  }
+  .bottom2 {
+    text-align: center;
+    .footerNav {
+      text-align: center;
+      li {
+        display: inline;
+        list-style: none;
+        padding: 0 5px;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* # Mobile (Landscape)
+   ================================================== */
+
+@include at-breakpoint($mobile_l) {
+
+  @include with-grid-settings(6,6rem,1.5rem,1rem) {
+    .container{
+      @include set-container-width(6);
+    }
+  }
+}
+
+
+/*  # Small Tablet (Portrait)
+    ================================================== */
+
+@include at-breakpoint($s_tablet_p) {
+
+  @include with-grid-settings(8,7rem,2rem,1rem) {
+    .container{
+      @include set-container-width(8);
+    }
+  }
+}
+
+
+/* # Tablet (Portrait)
+   ================================================== */
+
+@include at-breakpoint($tablet) {
+
+  section[role=main]{
+    .content-inner {
+      @include span-columns(6, 8)
+    }
+    aside[role=menu] {
+      @include span-columns(2 omega, 8)
+    }
+  }
+
+  #footerTop {
+    .footer1 {
+      @include span-columns(4, 8);
+    }
+    .footer2 {
+      @include span-columns(4 omega, 8);
+    }
+    .footer3 {
+      clear: both;
+    }
+  }
+}
+
+
+/* # Small Tablet (Landscape)
+   ================================================== */
+
+@include at-breakpoint($s_tablet_l) {
+
+  #footerBottom {
+    .bottom1 {
+      @include span-columns(4, 8);
+      text-align: left;
+    }
+
+    .bottom2 {
+      text-align: right;
+      .footerNav {
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+/* # Netbooks
+   ================================================== */
+
+@include at-breakpoint($desktop) {
+
+  @include with-grid-settings(12,6rem,2rem,1rem) {
+    .container {
+      @include all_columns;
+      @include set-container-width(12);
+    }
+  }
+
+  #logo-wrapper {
+    @include span-columns(3, 12);
+  }
+  #menu-wrapper {
+    @include span-columns(9 omega, 12);
+  }
+
+  #logo-wrapper,
+  #menu-wrapper {
+    min-width: 0;
+    clear: none;
+  }
+
+  #mainMenu {
+    width: auto;
+    .nav {
+      @include visible;
+    }
+    .responsive-nav {
+      @include hidden;
+    }
+  }
+  
+  section[role=main] {
+    .content-inner {
+      @include span-columns(9, 12)
+    }
+    aside[role=menu] {
+      @include span-columns(3 omega, 12)
+    }
+  }
+
+  #footerTop {
+    .footer1, .footer2, {
+      @include span-columns(4, 12);
+    }
+    .footer3 {
+      @include span-columns(4 omega, 12);
+      clear: none;
+    }
+  }
+
+  #footerBottom {
+    .bottom1 {
+      @include span-columns(6,12);
+    }
+    .bottom2 {
+      @include span-columns(6 omega,12);
+    }
+  }
+}

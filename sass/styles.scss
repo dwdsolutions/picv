@@ -1,0 +1,36 @@
+/* #Imports
+   ================================================== */
+
+@import "base";
+@import "mybootstrap";
+@import "bootstrap/variables";
+@import "compass/css3/transform";
+@import "mixins";
+@import "layout";
+@import "type";
+@import "forms";
+@import "font-awesome";
+
+
+/* #Base styles
+   ================================================== */
+
+/* #For devel */
+div,
+nav,
+header,
+footer,
+section {
+  //outline: 1px solid #B94A48 !important;
+}
+
+
+
+/* #Site Styles
+   ================================================== */
+
+
+body {
+  line-height: 2.3rem;
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,46 @@
+<%= form_for(@sucursal) do |f| %>
+  <% if @sucursal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sucursal.errors.count, "error") %> prohibited this sucursal from being saved:</h2>
+
+      <ul>
+      <% @sucursal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_area :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio %><br />
+    <%= collection_select(:sucursal, :municipio_id, @municipios, :id, :nombre_completo, {:prompt => false })  %>
+  </div>
+  <div class="field">
+    <%= f.label :institucion %><br />
+    <%= collection_select(:sucursal, :institucion_id, @instituciones, :id, :nombre, {:prompt => false })  %>
+
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :longitud %><br />
+    <%= f.text_field :longitud %>
+  </div>
+  <div class="field">
+    <%= f.label :latitud %><br />
+    <%= f.text_field :latitud %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

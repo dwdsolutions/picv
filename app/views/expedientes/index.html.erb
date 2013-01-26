@@ -1,0 +1,39 @@
+<h1>Listing expedientes</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido1</th>
+    <th>Apellido2</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th>Dui</th>
+    <th>Edad</th>
+    <th>Sexo</th>
+    <th>Municipio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expedientes.each do |expediente| %>
+  <tr>
+    <td><%= expediente.nombre %></td>
+    <td><%= expediente.apellido1 %></td>
+    <td><%= expediente.apellido2 %></td>
+    <td><%= expediente.telefono %></td>
+    <td><%= expediente.email %></td>
+    <td><%= expediente.dui %></td>
+    <td><%= expediente.edad %></td>
+    <td><%= expediente.sexo %></td>
+    <td><%= expediente.municipio %></td>
+    <td><%= link_to 'Show', expediente %></td>
+    <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
+    <td><%= link_to 'Destroy', expediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expediente', new_expediente_path %>

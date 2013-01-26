@@ -1,0 +1,54 @@
+<%= form_for(@expediente) do |f| %>
+  <% if @expediente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expediente.errors.count, "error") %> prohibited this expediente from being saved:</h2>
+
+      <ul>
+      <% @expediente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido1 %><br />
+    <%= f.text_field :apellido1 %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido2 %><br />
+    <%= f.text_field :apellido2 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :dui %><br />
+    <%= f.text_field :dui %>
+  </div>
+  <div class="field">
+    <%= f.label :edad %><br />
+    <%= f.number_field :edad %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio %><br />
+    <%= collection_select(:expediente, :municipio_id, @municipios, :id, :nombre_completo, {:prompt => false })  %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

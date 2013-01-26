@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @sucursal.direccion %>
+</p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @sucursal.municipio %>
+</p>
+
+<p>
+  <b>Institucion:</b>
+  <%= @sucursal.institucion %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @sucursal.telefono %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @sucursal.email %>
+</p>
+
+<p>
+  <b>Longitud:</b>
+  <%= @sucursal.longitud %>
+</p>
+
+<p>
+  <b>Latitud:</b>
+  <%= @sucursal.latitud %>
+</p>
+
+
+<%= link_to 'Edit', edit_sucursal_path(@sucursal) %> |
+<%= link_to 'Back', sucursales_path %>

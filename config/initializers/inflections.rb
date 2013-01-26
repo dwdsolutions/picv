@@ -13,3 +13,12 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+
+ActiveSupport::Inflector.inflections do |inflect|
+    inflect.irregular 'institucion', 'instituciones'
+    inflect.irregular 'ubicacion', 'ubicaciones'
+    inflect.irregular 'sucursal', 'sucursales'
+end
+
+

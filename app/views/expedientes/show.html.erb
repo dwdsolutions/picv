@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @expediente.nombre %>
+</p>
+
+<p>
+  <b>Apellido1:</b>
+  <%= @expediente.apellido1 %>
+</p>
+
+<p>
+  <b>Apellido2:</b>
+  <%= @expediente.apellido2 %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @expediente.telefono %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @expediente.email %>
+</p>
+
+<p>
+  <b>Dui:</b>
+  <%= @expediente.dui %>
+</p>
+
+<p>
+  <b>Edad:</b>
+  <%= @expediente.edad %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%= @expediente.sexo %>
+</p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @expediente.municipio %>
+</p>
+
+
+<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
+<%= link_to 'Back', expedientes_path %>

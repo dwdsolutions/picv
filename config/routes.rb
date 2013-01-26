@@ -1,4 +1,16 @@
 Picv::Application.routes.draw do
+  
+
+  resources :expedientes
+
+  resources :sucursales
+
+  resources :municipios
+
+  resources :departamentos
+
+  resources :instituciones
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +67,10 @@ Picv::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  resources :usuarios
+  resources :sesiones
+  root :to => "usuarios#new"
+  get "logout" => "sesiones#destroy", :as => "logout"
+  get "login" => "sesiones#new", :as => "login"
+  get "signup" => "usuarios#new", :as => "signup"
 end

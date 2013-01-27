@@ -33,7 +33,7 @@ class SmsController < ApplicationController
 			expediente.documento_identidad = datos_usuario[1]
 			expediente.sexo = sexo[datos_usuario[2].downcase]
 			expediente.save()
-					
+			@message = "Tu denuncia ha sido iniciada. Por favor dirigete a el hospital o Fosalud mas cercano."
 		else
 			@message = "Comando no reconocido!. Comandos reconocidos: AYUDA"
 		end

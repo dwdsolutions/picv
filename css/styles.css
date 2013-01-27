@@ -5936,14 +5936,13 @@ aside[role=menu] input.search-query {
 
 /* line 96, ../sass/_forms.scss */
 .loginContainer {
-  position: absolute;
+  position: relative;
   border: 1px solid #c4c4c4;
   width: 300px;
   height: auto;
-  left: 50%;
-  top: 50%;
-  margin-left: -171px;
-  margin-top: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -5955,7 +5954,7 @@ aside[role=menu] input.search-query {
   padding: 0px 20px 0 20px;
 }
 
-/* line 114, ../sass/_forms.scss */
+/* line 113, ../sass/_forms.scss */
 .loginContainer:after,
 .loginContainer:before {
   background: #f9f9f9;
@@ -5974,7 +5973,7 @@ aside[role=menu] input.search-query {
   width: 100%;
 }
 
-/* line 130, ../sass/_forms.scss */
+/* line 129, ../sass/_forms.scss */
 .loginContainer:after {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
@@ -5985,7 +5984,7 @@ aside[role=menu] input.search-query {
   z-index: -1;
 }
 
-/* line 135, ../sass/_forms.scss */
+/* line 134, ../sass/_forms.scss */
 .loginContainer:before {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
@@ -5996,14 +5995,14 @@ aside[role=menu] input.search-query {
   z-index: -2;
 }
 
-/* line 141, ../sass/_forms.scss */
+/* line 140, ../sass/_forms.scss */
 .form-row {
   margin-top: 15px;
   width: 100%;
   position: relative;
 }
 
-/* line 147, ../sass/_forms.scss */
+/* line 146, ../sass/_forms.scss */
 .form-actions {
   border-bottom: 1px solid #e5e5e5;
   -webkit-box-shadow: 0 1px 0px rgba(229, 229, 229, 0.1);
@@ -6012,12 +6011,12 @@ aside[role=menu] input.search-query {
   margin: 0 -20px 0 -20px;
 }
 
-/* line 153, ../sass/_forms.scss */
+/* line 152, ../sass/_forms.scss */
 .form-horizontal {
   margin-bottom: 0px;
 }
 
-/* line 158, ../sass/_forms.scss */
+/* line 157, ../sass/_forms.scss */
 .loginContainer .form-actions {
   padding-left: 20px !important;
   padding-right: 12px;

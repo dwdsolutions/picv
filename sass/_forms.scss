@@ -94,14 +94,13 @@ aside[role=menu] {
 
 
 .loginContainer {
-  position: absolute;
+  position: relative;
   border: 1px solid #c4c4c4;
   width: 300px;
   height: auto;
-  left: 50%;
-  top: 50%;
-  margin-left: -171px;
-  margin-top: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
   border-radius: 2px;
   @include border-radius(2px);
   @include box-shadow(0px 0px 1px 1px);

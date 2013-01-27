@@ -154,7 +154,7 @@
 
 <h3>Archivos</h3>
 
-<table>
+<table class="table table-bordered">
 <% @denuncia.archivos.each do |archivo| %>
   <tr>
     <td><%= link_to archivo.archivo_file_name, archivo.archivo.url %></td>
@@ -180,7 +180,7 @@
 
 <h3>Notas</h3>
 
-<table>
+<table class="table table-bordered">
 <% @denuncia.notas.each do |nota| %>
   <tr>
     <td><%= nota.descripcion %></td>

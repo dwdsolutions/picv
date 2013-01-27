@@ -7484,6 +7484,19 @@ aside[role=menu] input.search-query {
   padding-right: 12px;
 }
 
+/* line 166, ../sass/_forms.scss */
+#content .field select {
+  width: 30%;
+}
+/* line 169, ../sass/_forms.scss */
+#content .field input {
+  width: 50%;
+}
+/* line 172, ../sass/_forms.scss */
+#content .field textarea {
+  width: 75%;
+}
+
 /*
  *  Font Awesome 3.0.1
  *  the iconic font designed for use with Twitter Bootstrap

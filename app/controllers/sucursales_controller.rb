@@ -46,6 +46,8 @@ class SucursalesController < ApplicationController
   # POST /sucursales.json
   def create
     @sucursal = Sucursal.new(params[:sucursal])
+    @municipios = Municipio.all
+    @instituciones = Institucion.all
 
     respond_to do |format|
       if @sucursal.save
@@ -62,6 +64,8 @@ class SucursalesController < ApplicationController
   # PUT /sucursales/1.json
   def update
     @sucursal = Sucursal.find(params[:id])
+    @municipios = Municipio.all
+    @instituciones = Institucion.all
 
     respond_to do |format|
       if @sucursal.update_attributes(params[:sucursal])

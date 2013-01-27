@@ -1,6 +1,8 @@
 Picv::Application.routes.draw do
   
 
+  resources :denuncias
+
   resources :expedientes
 
   resources :sucursales

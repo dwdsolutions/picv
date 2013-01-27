@@ -1,0 +1,113 @@
+<%= form_for(@denuncia) do |f| %>
+  <% if @denuncia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@denuncia.errors.count, "error") %> prohibited this denuncia from being saved:</h2>
+
+      <ul>
+      <% @denuncia.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expediente %><br />
+    <%= collection_select(:denuncia, :expediente_id, @expedientes, :id, :nombre, {:prompt => false })  %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <%= f.select(:tipo, Denuncia::TIPOS, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion_hechos %><br />
+    <%= f.text_area :direccion_hechos %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio_hechos %><br />
+    <%= collection_select(:denuncia, :municipio_hechos_id, @municipios, :id, :nombre_completo, {:include_blank => 'Selecciona Municipio', :prompt => false})  %>
+  </div>
+  <div class="field">
+    <%= f.label :zona_hechos %><br />
+    <%= f.select(:zona_hechos, Denuncia::ZONAS, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :ambito %><br />
+    <%= f.select(:ambito, Denuncia::AMBITOS, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_agresion %><br />
+    <%= f.datetime_select :fecha_agresion %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_agresor %><br />
+    <%= f.text_field :nombre_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :edad_agresor %><br />
+    <%= f.text_field :edad_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo_agresor %><br />
+    <%= f.select(:sexo_agresor, Denuncia::SEXOS, {:prompt => false, :include_blank => 'Selecciona sexo'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion_agresor %><br />
+    <%= f.text_area :direccion_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio_agresor %><br /> 
+    <%= collection_select(:denuncia, :municipio_agresor_id, @municipios, :id, :nombre_completo, {:include_blank => 'Selecciona Municipio'})  %>
+  </div>
+  <div class="field">
+    <%= f.label :zona_agresor %><br />
+    <%= f.select(:zona_agresor, Denuncia::ZONAS, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :nivel_educativo_agresor %><br />
+    <%= f.select(:nivel_educativo_agresor, Denuncia::NIVELES_EDUCATIVOS, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :ocupacion_agresor %><br />
+    <%= f.text_field :ocupacion_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_agresor %><br />
+    <%= f.text_field :telefono_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :trabajo_agresor %><br />
+    <%= f.text_field :trabajo_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion_trabajo_agresor %><br />
+    <%= f.text_area :direccion_trabajo_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio_trabajo_agresor %><br />
+    <%= collection_select(:denuncia, :municipio_trabajo_agresor_id, @municipios, :id, :nombre_completo, {:include_blank => 'Selecciona Municipio', :prompt => false})  %>
+  </div>
+  <div class="field">
+    <%= f.label :relacion_agresor_victima %><br />
+    <%= f.select(:relacion_agresor_victima, Denuncia::RELACIONES, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :condicion_agresor %><br />
+    <%= f.select(:condicion_agresor, Denuncia::CONDICIONES, {:prompt => false}) %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_arma_agresor %><br />
+    <%= f.text_field :tipo_arma_agresor %>
+  </div>
+  <div class="field">
+    <%= f.label :antecendente_criminal_agresor %><br />
+    <%= f.check_box :antecendente_criminal_agresor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

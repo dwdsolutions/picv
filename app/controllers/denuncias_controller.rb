@@ -72,7 +72,7 @@ class DenunciasController < ApplicationController
 
     respond_to do |format|
       if @denuncia.save
-        format.html { redirect_to @denuncia, notice: 'Denuncia was successfully created.' }
+        format.html { redirect_to @expediente, notice: 'Denuncia was successfully created.' }
         format.json { render json: @denuncia, status: :created, location: @denuncia }
       else
         format.html { render action: "new_con_expediente" }

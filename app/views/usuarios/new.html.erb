@@ -1,15 +1,23 @@
-<h1>Sign Up</h1>
+<% content_for (:page_title) do %>
+<div class="center">
+  <a class="brand" href="#">
+    Plataforma de Información Integral Contra la
+    Violencia Domestica
+  </a>
+</div>
+<% end %>
 
-<%= form_for @usuario do |f| %>
+<div class="loginContainer">
+  <%= form_for @usuario do |f| %>
   <% if @usuario.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @usuario.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% for message in @usuario.errors.full_messages %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
   <div class="field">
     <%= f.label :email %>
@@ -17,7 +25,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :institucion %><br />
+    <%= f.label :institucion %>
     <%= collection_select(:usuario, :institucion_id, @instituciones, :id, :nombre, {:prompt => false, :allow_blank => "Selecciona Institucion" })  %>
   </div>
 
@@ -30,4 +38,5 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions"><%= f.submit %></div>
-<% end %>
+  <% end %>
+</div>

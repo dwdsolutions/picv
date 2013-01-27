@@ -2,26 +2,50 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>PICV</title>
+    <title><%= @page_title or 'PICV' %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le Styles -->
     <%= stylesheet_link_tag    "styles" %>
     <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Droid+Sans:400,700" %>
     <%= stylesheet_link_tag    "application", :media => "all" %>
-
+    <style type="text/css"><%= yield :stylesheets %></style>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <![endif]-->
 
+    <!-- Required Scripts -->
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+
+    <!-- Custom  -->
+    <%= javascript_include_tag "custom" %>
+    <style type="text/css"><%= yield :javascripts %></style>
+
     <%= csrf_meta_tags %>
   </head>
   <body>
 
-    <%= yield %>
+    <div class="container-fluid">
+      <header id="header">
+        <div class="row-fluid">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <%= yield :page_title %>
+              </div>
+            </div><!-- /navbar-inner -->
+          </div><!-- /navbar -->
+        </div><!-- End .row-fluid -->
+      </header><!-- End #header -->
+    </div><!-- End .container-fluid -->
+    
+    <section role="main" class="container-fluid">
+      <%= yield %>
+    </section>
 
   </body>
 </html>

@@ -1,10 +1,8 @@
 <% content_for (:page_title) do %>
-<div class="center">
-  <a class="brand" href="#">
-    Plataforma de Información Integral Contra la
-    Violencia Domestica
-  </a>
-</div>
+<a class="brand" href="#">
+  Plataforma de Información Integral Contra la
+  Violencia Domestica
+</a>
 <% end %>
 
 <div class="loginContainer">
@@ -19,24 +17,53 @@
     </ul>
   </div>
   <% end %>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+
+  <div class="form-row row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <%= f.label :email %>
+        <%= f.text_field :email, :class => 'input-block-level' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :institucion %>
-    <%= collection_select(:usuario, :institucion_id, @instituciones, :id, :nombre, {:prompt => false, :allow_blank => "Selecciona Institucion" })  %>
+  <div class="form-row row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <%= f.label :institucion %>
+        <%= collection_select(:usuario, :institucion_id, @instituciones, :id, :nombre, {:prompt => false, :allow_blank => "Selecciona Institucion" }, {:class=>'input-block-level'})  %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-row row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => 'input-block-level' %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+
+  <div class="form-row row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, :class => 'input-block-level' %>
+      </div>
+    </div>
   </div>
-  <div class="actions"><%= f.submit %></div>
-  <% end %>
+
+  <div class="form-row row-fluid">                       
+    <div class="span12">
+      <div class="row-fluid">
+        <div class="form-actions">
+          <div class="span12 controls center">
+            <div class="actions"><%= f.submit %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
 </div>

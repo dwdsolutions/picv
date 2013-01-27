@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario: 
+  expediente: 
+  tipo: MyString
+  direccion_hechos: MyText
+  municipio_hechos: 
+  zona_hechos: MyString
+  ambito: MyString
+  fecha_agresion: 2013-01-26 19:05:26
+  descripcion: MyText
+  nombre_agresor: MyString
+  edad_agresor: MyString
+  sexo_agresor: MyString
+  direccion_agresor: MyText
+  municipio_agresor: 
+  zona_agresor: MyString
+  nivel_educativo_agresor: MyString
+  ocupacion_agresor: MyString
+  telefono_agresor: MyString
+  trabajo_agresor: MyString
+  direccion_trabajo_agresor: MyText
+  municipio_trabajo_agresor: 
+  relacion_agresor_victima: MyString
+  condicion_agresor: MyString
+  tipo_arma_agresor: MyString
+  antecendente_criminal_agresor: false
+
+two:
+  usuario: 
+  expediente: 
+  tipo: MyString
+  direccion_hechos: MyText
+  municipio_hechos: 
+  zona_hechos: MyString
+  ambito: MyString
+  fecha_agresion: 2013-01-26 19:05:26
+  descripcion: MyText
+  nombre_agresor: MyString
+  edad_agresor: MyString
+  sexo_agresor: MyString
+  direccion_agresor: MyText
+  municipio_agresor: 
+  zona_agresor: MyString
+  nivel_educativo_agresor: MyString
+  ocupacion_agresor: MyString
+  telefono_agresor: MyString
+  trabajo_agresor: MyString
+  direccion_trabajo_agresor: MyText
+  municipio_trabajo_agresor: 
+  relacion_agresor_victima: MyString
+  condicion_agresor: MyString
+  tipo_arma_agresor: MyString
+  antecendente_criminal_agresor: false

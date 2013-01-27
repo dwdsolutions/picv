@@ -1,0 +1,71 @@
+<h1>Listing denuncias</h1>
+
+<table>
+  <tr>
+    <th>Usuario</th>
+    <th>Expediente</th>
+    <th>Tipo</th>
+    <th>Direccion hechos</th>
+    <th>Municipio hechos</th>
+    <th>Zona hechos</th>
+    <th>Ambito</th>
+    <th>Fecha agresion</th>
+    <th>Descripcion</th>
+    <th>Nombre agresor</th>
+    <th>Edad agresor</th>
+    <th>Sexo agresor</th>
+    <th>Direccion agresor</th>
+    <th>Municipio agresor</th>
+    <th>Zona agresor</th>
+    <th>Nivel educativo agresor</th>
+    <th>Ocupacion agresor</th>
+    <th>Telefono agresor</th>
+    <th>Trabajo agresor</th>
+    <th>Direccion trabajo agresor</th>
+    <th>Municipio trabajo agresor</th>
+    <th>Relacion agresor victima</th>
+    <th>Condicion agresor</th>
+    <th>Tipo arma agresor</th>
+    <th>Antecendente criminal agresor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @denuncias.each do |denuncia| %>
+  <tr>
+    <td><%= denuncia.usuario %></td>
+    <td><%= denuncia.expediente %></td>
+    <td><%= denuncia.tipo %></td>
+    <td><%= denuncia.direccion_hechos %></td>
+    <td><%= denuncia.municipio_hechos %></td>
+    <td><%= denuncia.zona_hechos %></td>
+    <td><%= denuncia.ambito %></td>
+    <td><%= denuncia.fecha_agresion %></td>
+    <td><%= denuncia.descripcion %></td>
+    <td><%= denuncia.nombre_agresor %></td>
+    <td><%= denuncia.edad_agresor %></td>
+    <td><%= denuncia.sexo_agresor %></td>
+    <td><%= denuncia.direccion_agresor %></td>
+    <td><%= denuncia.municipio_agresor %></td>
+    <td><%= denuncia.zona_agresor %></td>
+    <td><%= denuncia.nivel_educativo_agresor %></td>
+    <td><%= denuncia.ocupacion_agresor %></td>
+    <td><%= denuncia.telefono_agresor %></td>
+    <td><%= denuncia.trabajo_agresor %></td>
+    <td><%= denuncia.direccion_trabajo_agresor %></td>
+    <td><%= denuncia.municipio_trabajo_agresor %></td>
+    <td><%= denuncia.relacion_agresor_victima %></td>
+    <td><%= denuncia.condicion_agresor %></td>
+    <td><%= denuncia.tipo_arma_agresor %></td>
+    <td><%= denuncia.antecendente_criminal_agresor %></td>
+    <td><%= link_to 'Show', denuncia %></td>
+    <td><%= link_to 'Edit', edit_denuncia_path(denuncia) %></td>
+    <td><%= link_to 'Destroy', denuncia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Denuncia', new_denuncia_path %>

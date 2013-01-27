@@ -43,6 +43,7 @@ class MunicipiosController < ApplicationController
   # POST /municipios.json
   def create
     @municipio = Municipio.new(params[:municipio])
+    @departamentos = Departamento.all
 
     respond_to do |format|
       if @municipio.save
@@ -59,7 +60,8 @@ class MunicipiosController < ApplicationController
   # PUT /municipios/1.json
   def update
     @municipio = Municipio.find(params[:id])
-
+    @departamentos = Departamento.all
+    
     respond_to do |format|
       if @municipio.update_attributes(params[:municipio])
         format.html { redirect_to @municipio, notice: 'Municipio was successfully updated.' }

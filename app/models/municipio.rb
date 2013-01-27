@@ -6,4 +6,5 @@ class Municipio < ActiveRecord::Base
   	self.departamento.nombre + " - " + self.nombre 
   end
 
+  validates :nombre, :departamento_id, :presence => true
 end

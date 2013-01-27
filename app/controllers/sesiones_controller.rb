@@ -1,5 +1,6 @@
 class SesionesController < ApplicationController
 
+
   def new
 
   end

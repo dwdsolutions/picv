@@ -11,28 +11,21 @@
                     </span>
                   </li>
                   <li>
-                    <%= link_to expediente_path(@denuncia.expediente) do %>
-                        Expediente No. <%= @denuncia.expediente.id %>
+                    <%= link_to expediente_path(@expediente) do %>
+                        Expediente No. <%= @expediente.id %>
                     <% end %>                  
                     <span class="divider">
                       <span class="icon16 icomoon-icon-arrow-right">/</span>
                     </span>
                   </li>
-                   <li>
-                    <%= link_to denuncia_path(@denuncia) do %>
-                        Denuncia No. <%= @denuncia.id %>
-                    <% end %>                  
-                    <span class="divider">
-                      <span class="icon16 icomoon-icon-arrow-right">/</span>
-                    </span>
-                  </li>
-                  <li class="active">Editando Denuncia No. <%= @denuncia.id %></li>
+                  <li class="active">Nueva Denuncia</li>
 </ul>
 
-<h1>Editing denuncia</h1>
+<h1>New expediente</h1>
 
 <%= render 'form' %>
 
+<%= link_to 'Back', expedientes_path %>
 <% end %>
 
 <%= render :template => 'layouts/dashboard' %>

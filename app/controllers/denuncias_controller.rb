@@ -39,13 +39,26 @@ class DenunciasController < ApplicationController
     end
   end
 
+  def new_con_expediente
+    @denuncia = Denuncia.new
+    @expediente = Expediente.find(params[:id])
+    @municipios = Municipio.all 
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @denuncia }
+    end
+  end
+
   # GET /denuncias/1/edit
   def edit
     @denuncia = Denuncia.find(params[:id])
     @expedientes = Expediente.all
     @municipios = Municipio.all
+    @expediente = @denuncia.expediente
   end
 
+  
   # POST /denuncias
   # POST /denuncias.json
   def create
@@ -54,13 +67,15 @@ class DenunciasController < ApplicationController
     @municipios = Municipio.all
 
     @denuncia.usuario = current_user
+    @expediente = Expediente.find(params[:expediente_id])
+    @denuncia.expediente = @expediente
 
     respond_to do |format|
       if @denuncia.save
         format.html { redirect_to @denuncia, notice: 'Denuncia was successfully created.' }
         format.json { render json: @denuncia, status: :created, location: @denuncia }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new_con_expediente" }
         format.json { render json: @denuncia.errors, status: :unprocessable_entity }
       end
     end

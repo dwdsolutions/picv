@@ -5,14 +5,19 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= Usuario.new # guest user (not logged in)
-    #if user.rol =="admin" 
-        can :manage, :all
-    #end
 
-    #if user.rol =="usuario"
-      #  can :read, :create, :update, Expediente
-       # can :read, :create, :update, Denuncia
-    #!end
+    if user.rol.nil?
+        #can :manage, :all
+    end
+
+    if user.rol =="admin" 
+        can :manage, :all
+    end
+
+    if user.rol =="usuario"
+      can :read, :create, :update, Expediente
+      can :read, :create, :update, Denuncia
+    end
     #
     # The first argument to `can` is the action you are giving the user permission to do.
     # If you pass :manage it will apply to every action. Other common actions here are

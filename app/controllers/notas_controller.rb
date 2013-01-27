@@ -47,7 +47,7 @@ class NotasController < ApplicationController
 
     respond_to do |format|
       if @nota.save
-        format.html { redirect_to @nota, notice: 'Nota was successfully created.' }
+        format.html { redirect_to @denuncia, notice: 'Nota was successfully created.' }
         format.json { render json: @nota, status: :created, location: @nota }
       else
         format.html { render action: "new" }
@@ -76,10 +76,12 @@ class NotasController < ApplicationController
   # DELETE /notas/1.json
   def destroy
     @nota = Nota.find(params[:id])
+    @denuncia = @nota.denuncia
+
     @nota.destroy
 
     respond_to do |format|
-      format.html { redirect_to notas_url }
+      format.html { redirect_to @denuncia }
       format.json { head :no_content }
     end
   end

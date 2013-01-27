@@ -87,7 +87,7 @@
 </table>
 
 
-<%= link_to 'Editar', edit_expediente_path(@expediente) %> | <%= link_to 'Agregar Denuncia', new_denuncia_path %>
+<%= link_to 'Editar', edit_expediente_path(@expediente) %> | <%= link_to 'Agregar Denuncia', expediente_denuncia_path(@expediente.id) %>
 
 <% end %>
 

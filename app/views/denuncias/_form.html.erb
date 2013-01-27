@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :expediente %><br />
-    <%= collection_select(:denuncia, :expediente_id, @expedientes, :id, :nombre, {:prompt => false })  %>
-  </div>
+  
   <div class="field">
     <%= f.label :tipo %><br />
     <%= f.select(:tipo, Denuncia::TIPOS, {:prompt => false}) %>
@@ -108,9 +105,8 @@
     <%= f.check_box :antecendente_criminal_agresor %>
   </div>
   <div class="actions">
+     <%= hidden_field_tag(:expediente_id, "#{@expediente.id}") %>
     <%= f.submit %>
   </div>
 <% end %>
-
-<%= link_to 'New Denuncia', new_denuncia_path %>
 

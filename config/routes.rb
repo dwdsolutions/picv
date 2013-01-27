@@ -15,9 +15,13 @@ Picv::Application.routes.draw do
 
   resources :instituciones
 
+    
+
   match 'sms/index' => 'sms#index'
   
   resources :archivos
+
+  match 'denuncias/expediente/:id' => 'denuncias#new_con_expediente', :as => :expediente_denuncia
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -77,7 +81,7 @@ Picv::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   resources :usuarios
   resources :sesiones
-  root :to => "usuarios#new"
+  root :to => "expedientes#index"
   get "logout" => "sesiones#destroy", :as => "logout"
   get "login" => "sesiones#new", :as => "login"
   get "signup" => "usuarios#new", :as => "signup"

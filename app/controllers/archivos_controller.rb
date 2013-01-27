@@ -46,7 +46,7 @@ class ArchivosController < ApplicationController
 
     respond_to do |format|
       if @archivo.save
-        format.html { redirect_to @archivo, notice: 'Archivo was successfully created.' }
+        format.html { redirect_to @denuncia, notice: 'Archivo was successfully created.' }
         format.json { render json: @archivo, status: :created, location: @archivo }
       else
         format.html { render action: "new" }
@@ -75,10 +75,11 @@ class ArchivosController < ApplicationController
   # DELETE /archivos/1.json
   def destroy
     @archivo = Archivo.find(params[:id])
+    @denuncia = @archivo.denuncia
     @archivo.destroy
 
     respond_to do |format|
-      format.html { redirect_to archivos_url }
+      format.html { redirect_to @denuncia }
       format.json { head :no_content }
     end
   end

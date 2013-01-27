@@ -135,19 +135,6 @@ ActiveRecord::Schema.define(:version => 20130127163431) do
   add_index "sucursales", ["institucion_id"], :name => "index_sucursales_on_institucion_id"
   add_index "sucursales", ["municipio_id"], :name => "index_sucursales_on_municipio_id"
 
-  create_table "ubicaciones", :force => true do |t|
-    t.text     "direccion"
-    t.integer  "municipio_id"
-    t.string   "telefono"
-    t.string   "email"
-    t.string   "longitud"
-    t.string   "latitud"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "ubicaciones", ["municipio_id"], :name => "index_ubicaciones_on_municipio_id"
-
   create_table "usuarios", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"

@@ -37,13 +37,12 @@
             <div class="nav-no-collapse">
               <ul class="nav">
                 <li class="active">
-                  <a href="dashboard.html">
+                  <a href="/denuncias">
                     <i class="icon-desktop"></i> Dashboard</a>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="icon-cog"></i> Configuración
-                    <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
                     <li class="menu">
@@ -63,9 +62,6 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="icon-envelope-alt"></i> Mensajes <span class="notification">8</span>
-                  </a>
                   <ul class="dropdown-menu">
                     <li class="menu">
                       <ul class="messages">    
@@ -76,7 +72,7 @@
                           <span class="msg">I have question about new function ...</span>
                         </li>
                         <li>
-                          <span class="icon avatar"><img src="images/avatar.jpg" alt="" /></span>
+                          <i class="icon-user"></i>
                           <span class="name"><a data-toggle="modal" href="#myModal1"><strong>George Michael</strong></a><span class="time">1 hour ago</span></span>
                           <span class="msg">I need to meet you urgent please call me ...</span>
                         </li>
@@ -127,25 +123,9 @@
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
-                    <img src="images/avatar.jpg" alt="" class="image" /> 
-                    <span class="txt">admin@picv.com</span>
-                    <b class="caret"></b>
+                    <i class="icon-user"></i>
+                    <span class="txt">Admin</span>
                   </a>
-                  <ul class="dropdown-menu">
-                    <li class="menu">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="icon-pencil"></i> Editar perfil</a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="icon-comments-alt"></i> Aprovar comentarios</a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="icon-plus-sign-alt"></i> Añadir usuario</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
                 </li>
                 <li>
                   <a href="/logout"><i class="icon-signout"></i> Salir</a>
@@ -186,24 +166,11 @@
 
               <div class="mainnav">
                 <ul>
-                  <li><a href="/denuncias"><span class="icon16 icomoon-icon-stats-up"></span>Denuncias</a></li>
-                  <li>
-                    <a href="/instituciones"><span class="icon16 silk-icon-columns"></span>Instituciones</a>
-                    <ul class="sub">
-                      <li><a href="tables.html"><span class="icon16 icomoon-icon-arrow-right"></span>Static</a></li>
-                      <li><a href="data-table.html"><span class="icon16 icomoon-icon-arrow-right"></span>Data table</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="/municipios"><span class="icon16 brocco-icon-grid"></span>Municipios</a>
-                    <ul class="sub">
-                      <li><a href="icons.html"><span class="icon16 icomoon-icon-rocket"></span>Icons</a></li>
-                      <li><a href="buttons.html"><span class="icon16 icomoon-icon-paper"></span>Buttons</a></li>
-                      <li><a href="elements.html"><span class="icon16 minia-icon-cog"></span>Elements</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/departamentos"><span class="icon16 icomoon-icon-font"></span>Departamentos</a></li>
-                  <li><a href="/expedientes"><span class="icon16 icomoon-icon-grid-view"></span>Expedientes</a></li>
+                  <li><a href="/denuncias"><i class="icon-warning-sign"></i> Denuncias</a></li>
+                  <li><a href="/instituciones"><i class="icon-building"></i> Instituciones</a></li>
+                  <li><a href="/municipios"><i class="icon-circle-blank"></i> Municipios</a> </li>
+                  <li><a href="/departamentos"><i class="icon-circle"></i> Departamentos</a></li>
+                  <li><a href="/expedientes"><i class="icon-folder-open"></i> Expedientes</a></li>
                 </ul>
               </div>
             </div><!-- End sidenav -->
@@ -215,30 +182,16 @@
             <div class="contentwrapper"><!--Content wrapper-->
 
               <div class="heading">
-                <div class="resBtnSearch">
-                  <a href="#"><span class="icon16 brocco-icon-search"></span></a>
-                </div>
 
                 <div class="search">
-
-                  <form id="searchform" action="search.html">
-                    <input type="text" id="tipue_search_input" class="top-search" placeholder="Buscar aquí ..." />
-                    <input type="submit" id="tipue_search_button" class="search-btn" value="" />
+                  <form id="searchform" class="input-append" action="/search">
+                    <input type="text" id="appendedInputButton" class="top-search" placeholder="Buscar aquí ..." />
                   </form>
                   
                 </div><!-- End search -->
 
                 <ul class="breadcrumb">
-                  <li>Estás en:</li>
-                  <li>
-                    <a href="#" class="tip" title="back to dashboard">
-                      <span class="icon16 icomoon-icon-screen"></span>
-                    </a> 
-                    <span class="divider">
-                      <span class="icon16 icomoon-icon-arrow-right"></span>
-                    </span>
-                  </li>
-                  <li class="active">Dashboard</li>
+
                 </ul>
 
               </div><!-- End .heading-->

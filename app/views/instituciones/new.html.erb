@@ -1,5 +1,9 @@
+<% content_for :content do %>
 <h1>New institucion</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', instituciones_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

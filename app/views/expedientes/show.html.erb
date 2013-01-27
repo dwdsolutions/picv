@@ -1,3 +1,4 @@
+<% content_for :content do %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -48,3 +49,6 @@
 
 <%= link_to 'Edit', edit_expediente_path(@expediente) %> |
 <%= link_to 'Back', expedientes_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

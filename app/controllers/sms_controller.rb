@@ -17,7 +17,7 @@ class SmsController < ApplicationController
 			}
 			datos_usuario = @body.split(', ')
 			expediente = Expediente.new
-			nombre = datos_usuario.split
+			nombre = datos_usuario[0].split
 			if nombre.length == 4
 				expediente.nombre = nombre[0].concat(" ").concat(nombre[1])
 				expediente.apellido1 = nombre[2]

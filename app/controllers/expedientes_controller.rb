@@ -1,4 +1,7 @@
 class ExpedientesController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /expedientes
   # GET /expedientes.json
   def index
@@ -42,7 +45,7 @@ class ExpedientesController < ApplicationController
   # POST /expedientes.json
   def create
     @expediente = Expediente.new(params[:expediente])
-
+    
     respond_to do |format|
       if @expediente.save
         format.html { redirect_to @expediente, notice: 'Expediente was successfully created.' }

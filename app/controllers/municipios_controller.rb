@@ -1,4 +1,7 @@
 class MunicipiosController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /municipios
   # GET /municipios.json
   def index

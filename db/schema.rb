@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127060347) do
+ActiveRecord::Schema.define(:version => 20130127163431) do
+
+  create_table "archivos", :force => true do |t|
+    t.string   "archivo_file_name"
+    t.string   "archivo_content_type"
+    t.integer  "archivo_file_size"
+    t.datetime "archivo_updated_at"
+    t.integer  "denuncia_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "archivos", ["denuncia_id"], :name => "index_archivos_on_denuncia_id"
 
   create_table "denuncias", :force => true do |t|
     t.integer  "usuario_id"
@@ -97,6 +109,17 @@ ActiveRecord::Schema.define(:version => 20130127060347) do
 
   add_index "municipios", ["departamento_id"], :name => "index_municipios_on_departamento_id"
 
+  create_table "notas", :force => true do |t|
+    t.integer  "usuario_id"
+    t.integer  "denuncia_id"
+    t.text     "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "notas", ["denuncia_id"], :name => "index_notas_on_denuncia_id"
+  add_index "notas", ["usuario_id"], :name => "index_notas_on_usuario_id"
+
   create_table "sucursales", :force => true do |t|
     t.text     "direccion"
     t.integer  "municipio_id"
@@ -111,6 +134,19 @@ ActiveRecord::Schema.define(:version => 20130127060347) do
 
   add_index "sucursales", ["institucion_id"], :name => "index_sucursales_on_institucion_id"
   add_index "sucursales", ["municipio_id"], :name => "index_sucursales_on_municipio_id"
+
+  create_table "ubicaciones", :force => true do |t|
+    t.text     "direccion"
+    t.integer  "municipio_id"
+    t.string   "telefono"
+    t.string   "email"
+    t.string   "longitud"
+    t.string   "latitud"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "ubicaciones", ["municipio_id"], :name => "index_ubicaciones_on_municipio_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "email"

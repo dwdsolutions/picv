@@ -26,6 +26,9 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
+gem "cancan"
+gem "paperclip"
+gem 'aws-sdk'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

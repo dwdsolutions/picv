@@ -20,6 +20,8 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.irregular 'ubicacion', 'ubicaciones'
     inflect.irregular 'sucursal', 'sucursales'
     inflect.irregular 'denuncia', 'denuncias'
+    inflect.irregular 'archivo', 'archivos'
+    inflect.irregular 'nota', 'notas'
 end
 
 

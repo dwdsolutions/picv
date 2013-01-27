@@ -1,0 +1,21 @@
+<h1>Listing archivos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @archivos.each do |archivo| %>
+  <tr>
+    <td><%= link_to 'Show', archivo %></td>
+    <td><%= link_to 'Edit', edit_archivo_path(archivo) %></td>
+    <td><%= link_to 'Destroy', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Archivo', new_archivo_path %>

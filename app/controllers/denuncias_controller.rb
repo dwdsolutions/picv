@@ -1,4 +1,7 @@
 class DenunciasController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /denuncias
   # GET /denuncias.json
   def index
@@ -14,7 +17,9 @@ class DenunciasController < ApplicationController
   # GET /denuncias/1.json
   def show
     @denuncia = Denuncia.find(params[:id])
-
+    @archivo = Archivo.new
+    @nota = Nota.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @denuncia }
@@ -47,6 +52,8 @@ class DenunciasController < ApplicationController
     @denuncia = Denuncia.new(params[:denuncia])
     @expedientes = Expediente.all
     @municipios = Municipio.all
+
+    @denuncia.usuario = current_user
 
     respond_to do |format|
       if @denuncia.save

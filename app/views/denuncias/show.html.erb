@@ -1,6 +1,55 @@
 <% content_for :content do %>
 <p id="notice"><%= notice %></p>
 
+
+<%= form_for(@archivo) do |f| %>
+  
+  <div class="field">
+    <%= f.label :archivo %><br />
+    <%= f.file_field :archivo %>
+  </div>
+
+  <div class="actions">
+    <%= hidden_field_tag(:attachable_id, "#{@denuncia.id}") %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h3>Archivos</h3>
+
+<table>
+<% @denuncia.archivos.each do |archivo| %>
+  <tr>
+    <td><%= link_to archivo.archivo_file_name, archivo.archivo.url %></td>
+    <td><%= link_to 'Eliminar', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+Notas
+
+<%= form_for(@nota) do |f| %>
+
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="actions">
+    <%= hidden_field_tag(:denuncia_id, "#{@denuncia.id}") %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<table>
+<% @denuncia.notas.each do |nota| %>
+  <tr>
+    <td><%= nota.descripcion %></td>
+    <td><%= link_to 'Eliminar', nota, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
 <p>
   <b>Usuario:</b>
   <%= @denuncia.usuario %>
@@ -23,7 +72,7 @@
 
 <p>
   <b>Municipio hechos:</b>
-  <%= @denuncia.municipio_hechos %>
+  
 </p>
 
 <p>

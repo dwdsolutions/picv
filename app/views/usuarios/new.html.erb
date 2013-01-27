@@ -15,6 +15,12 @@
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
+
+  <div class="field">
+    <%= f.label :institucion %><br />
+    <%= collection_select(:usuario, :institucion_id, @instituciones, :id, :nombre, {:prompt => false, :allow_blank => "Selecciona Institucion" })  %>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <%= f.password_field :password %>

@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130127010526) do
+ActiveRecord::Schema.define(:version => 20130127053600) do
 
   create_table "denuncias", :force => true do |t|
     t.integer  "usuario_id"
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20130127010526) do
   add_index "denuncias", ["municipio_hechos_id"], :name => "index_denuncias_on_municipio_hechos_id"
   add_index "denuncias", ["municipio_trabajo_agresor_id"], :name => "index_denuncias_on_municipio_trabajo_agresor_id"
   add_index "denuncias", ["usuario_id"], :name => "index_denuncias_on_usuario_id"
->>>>>>> Validando modelos y actualizando formularios
 
   create_table "departamentos", :force => true do |t|
     t.string   "nombre"
@@ -133,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130127010526) do
     t.string   "nombre"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "institucion_id"
   end
 
 end

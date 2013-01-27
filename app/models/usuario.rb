@@ -1,8 +1,9 @@
 class Usuario < ActiveRecord::Base
   has_secure_password
-  validates_presence_of :password, :on => :create
+  belongs_to :institucion
+  validates_presence_of :password, :institucion_id, :on => :create
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :institucion_id
   validates :email, 
   			:email_format => {
   								:message => 'is not looking good',

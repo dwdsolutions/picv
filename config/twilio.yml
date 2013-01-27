@@ -1,0 +1,9 @@
+development:
+	from: '2407519179'
+	sid: 'AC9d64132178ca4b8eacc77ab9c56a37d1'
+	token: 'af14d4dc376a4e7912130e47a43ebffc'
+
+production:
+	from: '2407519179'
+	sid: 'AC9d64132178ca4b8eacc77ab9c56a37d1'
+	token: 'af14d4dc376a4e7912130e47a43ebffc'

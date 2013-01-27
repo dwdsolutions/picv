@@ -1,4 +1,7 @@
 class SucursalesController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /sucursales
   # GET /sucursales.json
   def index

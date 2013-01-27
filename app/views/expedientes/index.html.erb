@@ -1,43 +1,38 @@
 <% content_for :content do %>
-<h1>Listing expedientes</h1>
+
+<ul class="breadcrumb">
+    <li>Estás en:</li>
+    <li class="active">Expedientes</li>
+</ul>
+
+
+<h1>Expedientes</h1>
 
 <table class="table table-bordered">
   <tr>
-    <th>Nombre</th>
-    <th>Apellido1</th>
-    <th>Apellido2</th>
-    <th>Telefono</th>
-    <th>Email</th>
-    <th>Dui</th>
-    <th>Edad</th>
-    <th>Sexo</th>
-    <th>Municipio</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th width="90%" >Expediente</th>
+    <th width="10%">Acciones</th>
   </tr>
 
 <% @expedientes.each do |expediente| %>
   <tr>
-    <td><%= expediente.nombre %></td>
-    <td><%= expediente.apellido1 %></td>
-    <td><%= expediente.apellido2 %></td>
-    <td><%= expediente.telefono %></td>
-    <td><%= expediente.email %></td>
-    <td><%= expediente.dui %></td>
-    <td><%= expediente.edad %></td>
-    <td><%= expediente.sexo %></td>
-    <td><%= expediente.municipio %></td>
-    <td><%= link_to 'Show', expediente %></td>
-    <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
-    <td><%= link_to 'Destroy', expediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><b>Nombre:</b> <i><%= expediente.nombre %>
+        <%= expediente.apellido1 %>
+        <%= expediente.apellido2 %></i><br>
+        <b>Documento de Identidad:</b> <%= expediente.documento_identidad %><br>
+        <b>Edad:</b> <%= expediente.edad %><br>
+        <b>Sexo:</b> <%= expediente.sexo %> </td>
+        
+        <td>
+            <%= link_to 'Ver', expediente %>
+        </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Expediente', new_expediente_path %>
+<%= link_to 'Agregar Expediente', new_expediente_path %>
 <% end %>
 
 <%= render :template => 'layouts/dashboard' %>

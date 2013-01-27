@@ -1,5 +1,7 @@
 class UsuariosController < ApplicationController
 
+	load_and_authorize_resource
+	
 	def new
     	@usuario = Usuario.new
     	@instituciones = Institucion.all

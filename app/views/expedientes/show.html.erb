@@ -1,4 +1,19 @@
 <% content_for :content do %>
+
+<ul class="breadcrumb">
+                  <li>Estás en:</li>
+                  <li>
+                    <%= link_to expedientes_path do %>
+                        Expedientes
+                    <% end %>                  
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right">/</span>
+                    </span>
+                  </li>
+                  <li class="active">Expediente No. <%= @expediente.id %></li>
+</ul>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -28,7 +43,7 @@
 
 <p>
   <b>Dui:</b>
-  <%= @expediente.dui %>
+  <%= @expediente.documento_identidad %>
 </p>
 
 <p>
@@ -43,12 +58,37 @@
 
 <p>
   <b>Municipio:</b>
-  <%= @expediente.municipio %>
+  <%= @expediente.municipio.nombre_completo %>
 </p>
 
 
-<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
-<%= link_to 'Back', expedientes_path %>
+<h3>Denuncias</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th width="90%" >Denuncia</th>
+    <th width="10%">Acciones</th>
+  </tr>
+
+<% @expediente.denuncias.each do |denuncia| %>
+  <tr>
+    <td>
+      <b>Fecha:</b> <i><%= denuncia.created_at %></i><br>
+      <b>Tipo:</b> <i><%= denuncia.tipo %></i><br>
+      <b>Direccion:</b> <i><%= denuncia.municipio_hechos %></i><br>
+      <b>Descripcion:</b> <i><%= denuncia.descripcion %></i><br>
+    </td>
+        
+    <td>
+            <%= link_to 'Ver', denuncia %>
+        </td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Editar', edit_expediente_path(@expediente) %> | <%= link_to 'Agregar Denuncia', new_denuncia_path %>
+
 <% end %>
 
 <%= render :template => 'layouts/dashboard' %>

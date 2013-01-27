@@ -1,5 +1,77 @@
 <% content_for :content do %>
+
+
+<ul class="breadcrumb">
+                  <li>Estás en:</li>
+                  <li>
+                    <%= link_to expedientes_path do %>
+                        Expedientes
+                    <% end %>                  
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right">/</span>
+                    </span>
+                  </li>
+                  <li>
+                    <%= link_to expediente_path(@denuncia.expediente) do %>
+                        Expediente No. <%= @denuncia.expediente.id %>
+                    <% end %>                  
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right">/</span>
+                    </span>
+                  </li>
+                  <li class="active">Denuncia No. <%= @denuncia.id %></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
+
+
+<%= form_for(@archivo) do |f| %>
+  
+  <div class="field">
+    <%= f.label :archivo %><br />
+    <%= f.file_field :archivo %>
+  </div>
+
+  <div class="actions">
+    <%= hidden_field_tag(:attachable_id, "#{@denuncia.id}") %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h3>Archivos</h3>
+
+<table>
+<% @denuncia.archivos.each do |archivo| %>
+  <tr>
+    <td><%= link_to archivo.archivo_file_name, archivo.archivo.url %></td>
+    <td><%= link_to 'Eliminar', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+Notas
+
+<%= form_for(@nota) do |f| %>
+
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="actions">
+    <%= hidden_field_tag(:denuncia_id, "#{@denuncia.id}") %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<table>
+<% @denuncia.notas.each do |nota| %>
+  <tr>
+    <td><%= nota.descripcion %></td>
+    <td><%= link_to 'Eliminar', nota, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
 
 <p>
   <b>Usuario:</b>
@@ -23,7 +95,7 @@
 
 <p>
   <b>Municipio hechos:</b>
-  <%= @denuncia.municipio_hechos %>
+  
 </p>
 
 <p>
@@ -127,8 +199,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_denuncia_path(@denuncia) %> |
-<%= link_to 'Back', denuncias_path %>
+<%= link_to 'Edit', edit_denuncia_path(@denuncia) %>
 <% end %>
 
 <%= render :template => 'layouts/dashboard' %>

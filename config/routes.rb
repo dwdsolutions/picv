@@ -1,6 +1,8 @@
 Picv::Application.routes.draw do
   
 
+  resources :notas
+
   resources :denuncias
 
   resources :expedientes
@@ -14,6 +16,8 @@ Picv::Application.routes.draw do
   resources :instituciones
 
   match 'sms/index' => 'sms#index'
+  
+  resources :archivos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

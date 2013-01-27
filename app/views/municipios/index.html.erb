@@ -1,3 +1,4 @@
+<% content_for :content do %>
 <h1>Listing municipios</h1>
 
 <table>
@@ -23,3 +24,6 @@
 <br />
 
 <%= link_to 'New Municipio', new_municipio_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

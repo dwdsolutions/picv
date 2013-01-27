@@ -1,6 +1,10 @@
+<% content_for :content do %>
 <h1>Editing expediente</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @expediente %> |
 <%= link_to 'Back', expedientes_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

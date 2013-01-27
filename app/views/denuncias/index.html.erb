@@ -1,6 +1,7 @@
+<% content_for :content do %>
 <h1>Listing denuncias</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Usuario</th>
     <th>Expediente</th>
@@ -69,3 +70,6 @@
 <br />
 
 <%= link_to 'New Denuncia', new_denuncia_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

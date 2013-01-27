@@ -1,3 +1,4 @@
+<% content_for :content do %>
 <h1>Listing instituciones</h1>
 
 <table>
@@ -21,3 +22,6 @@
 <br />
 
 <%= link_to 'New Institucion', new_institucion_path %>
+<% end %>
+
+<%= render :template => 'layouts/dashboard' %>

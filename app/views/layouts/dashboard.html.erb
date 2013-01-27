@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @page_title or 'Panel de control' %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le Styles -->
+    <!--    <%= stylesheet_link_tag    "application", :media => "all" %> -->
+    <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Droid+Sans:400,700" %>
+    <%= stylesheet_link_tag    "styles" %>
+    <style type="text/css"><%= yield :stylesheets %></style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <!-- Required Scripts -->
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+
+    <!-- Custom  -->
+    <%= javascript_include_tag "custom" %>
+    <style type="text/css"><%= yield :javascripts %></style>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <header id="header">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="brand" href="/">PICV</a>
+            <div class="nav-no-collapse">
+              <ul class="nav">
+                <li class="active">
+                  <a href="dashboard.html">
+                    <i class="icon-desktop"></i> Dashboard</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-cog"></i> Configuración
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="menu">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <i class="icon-desktop"></i> Configuración del sitio
+                          </a>
+                        </li>
+                        <li>                                                 
+                          <a href="#">
+                            <i class="icon-wrench"></i> Complementos
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-envelope-alt"></i> Mensajes <span class="notification">8</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="menu">
+                      <ul class="messages">    
+                        <li class="header"><strong>Mensajes</strong> (10) correos y (2) MP</li>
+                        <li>
+                          <span class="icon"><i class="icon-user"></i></span>
+                          <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Sammy Morerira</strong></a><span class="time">35 min ago</span></span>
+                          <span class="msg">I have question about new function ...</span>
+                        </li>
+                        <li>
+                          <span class="icon avatar"><img src="images/avatar.jpg" alt="" /></span>
+                          <span class="name"><a data-toggle="modal" href="#myModal1"><strong>George Michael</strong></a><span class="time">1 hour ago</span></span>
+                          <span class="msg">I need to meet you urgent please call me ...</span>
+                        </li>
+                        <li>
+                          <span class="icon"><i class="icon-envelope-alt"></i></span>
+                          <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Ivanovich</strong></a><span class="time">1 day ago</span></span>
+                          <span class="msg">I send you my suggestion, please look and ...</span>
+                        </li>
+                        <li class="view-all"><a href="#">Ver todos los mensajes <i class="icon-circle-arrow-right"></i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              
+              <ul class="nav pull-right usernav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-bell-alt"></i>
+                    <span class="notification">3</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="menu">
+                      <ul class="notif">
+                        <li class="header"><strong>Notificaciones</strong> (3) elementos</li>
+                        <li>
+                          <a href="#">
+                            <span class="icon"><i class="icon-user"></i></span>
+                            <span class="event">1 User is registred</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <span class="icon"><i class="icon-comment"></i></span>
+                            <span class="event">Jony add 1 comment</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <span class="icon"><i class="icon-file"></i></span>
+                            <span class="event">admin Julia added post with a long description</span>
+                          </a>
+                        </li>
+                        <li class="view-all"><a href="#">Ver todas las notifiaciones <i class="icon-circle-arrow-right"></i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                    <img src="images/avatar.jpg" alt="" class="image" /> 
+                    <span class="txt">admin@picv.com</span>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="menu">
+                      <ul>
+                        <li>
+                          <a href="#"><i class="icon-pencil"></i> Editar perfil</a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="icon-comments-alt"></i> Aprovar comentarios</a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="icon-plus-sign-alt"></i> Añadir usuario</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="index.html"><i class="icon-signout"></i> Salir</a>
+                </li>
+              </ul>
+            </div><!-- /.nav-collapse -->
+          </div>
+        </div><!-- /navbar-inner -->
+      </div><!-- /navbar --> 
+    </header>
+
+    <section role="main">
+
+      <section role="main">
+
+        <div id="wrapper">
+
+          <!--Responsive navigation button-->  
+          <div class="resBtn">
+            <a href="#"><span class="icon16 minia-icon-list-3"></span></a>
+          </div>
+          
+          <!--Sidebar collapse button-->  
+          <div class="collapseBtn">
+            <a href="#" class="tipR" title="Hide sidebar"><span class="icon12 minia-icon-layout"></span></a>
+          </div>
+
+          <!--Sidebar background-->
+          <div id="sidebarbg"></div>
+          <!--Sidebar content-->
+          <div id="sidebar">
+
+            <div class="shortcuts">
+              <ul>
+                <li><a href="#" title="Support section" class="tip"><span class="icon24 wpzoom-support"></span></a></li>
+                <li><a href="#" title="Database backup" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>
+                <li><a href="#" title="Sales statistics" class="tip"><span class="icon24 iconic-icon-chart"></span></a></li>
+                <li><a href="#" title="Write post" class="tip"><span class="icon24 icomoon-icon-pencil"></span></a></li>
+              </ul>
+            </div><!-- End search -->            
+
+            <div class="sidenav">
+
+              <div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                <h5 class="title" style="margin-bottom:0">Navigation</h5>
+              </div><!-- End .sidenav-widget -->
+
+              <div class="mainnav">
+                <ul>
+                  <li><a href="charts.html"><span class="icon16 icomoon-icon-stats-up"></span>Charts</a></li>
+                  <li>
+                    <a href="#"><span class="icon16 minia-icon-list-4"></span>Forms</a>
+                    <ul class="sub">
+                      <li><a href="forms.html"><span class="icon16 icomoon-icon-paper"></span>Forms Stuff</a></li>
+                      <li><a href="forms-validation.html"><span class="icon16 icomoon-icon-paper"></span>Validation</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon16 silk-icon-columns"></span>Tables</a>
+                    <ul class="sub">
+                      <li><a href="tables.html"><span class="icon16 icomoon-icon-arrow-right"></span>Static</a></li>
+                      <li><a href="data-table.html"><span class="icon16 icomoon-icon-arrow-right"></span>Data table</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon16 brocco-icon-grid"></span>UI Elements</a>
+                    <ul class="sub">
+                      <li><a href="icons.html"><span class="icon16 icomoon-icon-rocket"></span>Icons</a></li>
+                      <li><a href="buttons.html"><span class="icon16 icomoon-icon-paper"></span>Buttons</a></li>
+                      <li><a href="elements.html"><span class="icon16 minia-icon-cog"></span>Elements</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="typo.html"><span class="icon16 icomoon-icon-font"></span>Typography</a></li>
+                  <li><a href="grid.html"><span class="icon16 icomoon-icon-grid-view"></span>Grid</a></li>
+                  <li><a href="calendar.html"><span class="icon16 brocco-icon-calendar"></span>Calendar</a></li>
+                  <li>
+                    <a href="widgets.html"><span class="icon16 icomoon-icon-cube"></span>Widgets<span class="notification green">30</span></a>
+                  </li>
+                  <li><a href="file.html"><span class="icon16 icomoon-icon-upload-2"></span>File Manager</a></li>
+                  <li>
+                    <a href="#"><span class="icon16 icomoon-icon-paper"></span>Error pages<span class="notification">6</span></a>
+                    <ul class="sub">
+                      <li><a href="403.html"><span class="icon16 icomoon-icon-paper"></span>Error 403</a></li>
+                      <li><a href="404.html"><span class="icon16 icomoon-icon-paper"></span>Error 404</a></li>
+                      <li><a href="405.html"><span class="icon16 icomoon-icon-paper"></span>Error 405</a></li>
+                      <li><a href="500.html"><span class="icon16 icomoon-icon-paper"></span>Error 500</a></li>
+                      <li><a href="503.html"><span class="icon16 icomoon-icon-paper"></span>Error 503</a></li>
+                      <li><a href="offline.html"><span class="icon16 icomoon-icon-paper"></span>Offline page</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon16 iconic-icon-box"></span>Other pages<span class="notification blue">4</span></a>
+                    <ul class="sub">
+                      <li><a href="invoice.html"><span class="icon16 icomoon-icon-paper"></span>Invoice page</a></li>
+                      <li><a href="profile.html"><span class="icon16 icomoon-icon-paper"></span>User profile</a></li>
+                      <li><a href="search.html"><span class="icon16 wpzoom-search"></span>Search page</a></li>
+                      <li><a href="email.html"><span class="icon16 icomoon-icon-mail"></span>Email page</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- End sidenav -->
+
+          </div><!-- End #sidebar -->
+
+          <!--Body content-->
+          <div id="content" class="clearfix">
+            <div class="contentwrapper"><!--Content wrapper-->
+
+              <div class="heading">
+
+                <h3>Dashboard</h3>                    
+
+                <div class="resBtnSearch">
+                  <a href="#"><span class="icon16 brocco-icon-search"></span></a>
+                </div>
+
+                <div class="search">
+
+                  <form id="searchform" action="search.html">
+                    <input type="text" id="tipue_search_input" class="top-search" placeholder="Search here ..." />
+                    <input type="submit" id="tipue_search_button" class="search-btn" value="" />
+                  </form>
+                  
+                </div><!-- End search -->
+
+                <ul class="breadcrumb">
+                  <li>You are here:</li>
+                  <li>
+                    <a href="#" class="tip" title="back to dashboard">
+                      <span class="icon16 icomoon-icon-screen"></span>
+                    </a> 
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right"></span>
+                    </span>
+                  </li>
+                  <li class="active">Dashboard</li>
+                </ul>
+
+              </div><!-- End .heading-->
+
+              <!-- Build page from here: -->
+              <div class="row-fluid">
+                <%= yield :content %>
+              </div><!-- End .row-fluid -->
+
+            </div><!-- End contentwrapper -->
+          </div><!-- End #content -->
+
+        </div><!-- End #wrapper -->
+
+      </section>
+
+  </body>
+</html>

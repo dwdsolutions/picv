@@ -1,4 +1,4 @@
-class SMSController < ApplicationController
+class SmsController < ApplicationController
 	def index
 		@body = params[:body]
 		@from = params[:from]

@@ -141,11 +141,8 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   jquery-rails
-<<<<<<< HEAD
   paperclip
-=======
   pg
->>>>>>> ad0b5d03f47dfd0f4ee5edceff20f8cf922a04dc
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
   sqlite3

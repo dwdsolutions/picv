@@ -13,6 +13,8 @@ Picv::Application.routes.draw do
 
   resources :instituciones
 
+  match 'sms/index' => 'sms#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

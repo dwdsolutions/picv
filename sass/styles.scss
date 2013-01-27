@@ -5,8 +5,9 @@
 @import "mybootstrap";
 @import "bootstrap/variables";
 @import "compass/css3/transform";
+@import "compass/css3/text-shadow";
 @import "mixins";
-@import "layout";
+//@import "layout";
 @import "type";
 @import "forms";
 @import "font-awesome";
@@ -43,12 +44,209 @@ body {
   }
 }
 
+/* Layout structure
+   ================================================== */
+#header {
+  height:66px;
+  border-bottom: 1px solid #c4c4c4;
+  @include box-shadow(0 1px 0px rgba(255, 255, 255, 1));
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 1000;
+}
+
+#header .logo {
+  padding: 7px 0 2px 20px;
+  a {
+    color: #353535;
+    &:hover {
+      text-decoration:none;
+    }
+  }
+  span.slogan {
+    font-size:14px;
+    color: #6b6b6b;
+  }
+}
+
+.navbar {
+  color: #3f3f3f;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.navbar-inner {
+  min-height: 66px;
+  padding-right: 0px;
+  padding-left: 20px;
+  @include border-radius(0px);
+  box-shadow: none;
+  border:none;
+}
 .navbar .brand {
-  font-size: 2.4rem;
+  padding: 8px 20px 12px;
+  margin-left: -20px;
+  margin-right: 55px;
+  font-size: 30px;
   font-weight: 700;
-  line-height: 4.5rem;
+  line-height: 45px;
   color: #353535;
-  text-shadow: 0 1px 0 #ffffff;
+  .slogan {font-size:14px; color: #6b6b6b;}
+}
+
+.navbar .nav {
+  margin: 15px 10px 5px 20px;
+  > li {
+    display: block;
+    float: left;
+    margin-right:20px;
+    position: relative;
+    > a {
+      float: none;
+      line-height: 18px;
+      font-size: 12px;
+      color: #555;
+      padding:8px 10px;
+      border:1px solid;
+      @include border-radius(2px);
+      position: relative;
+      @include text-shadow(0 1px 0 white);
+      border-color: #CCC #CCC #AAA;
+      background-color: #E0E0E0;
+      @include box-shadow(inset 0 0 1px #fff);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#fffafafa,EndColorStr=#ffdcdcdc);
+      background-image: -moz-linear-gradient(top,#FAFAFA 0,#DCDCDC 100%);
+      background-image: -ms-linear-gradient(top,#FAFAFA 0,#DCDCDC 100%);
+      background-image: -o-linear-gradient(top,#FAFAFA 0,#DCDCDC 100%);
+      background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FAFAFA),color-stop(100%,#DCDCDC));
+      background-image: -webkit-linear-gradient(top,#FAFAFA 0,#DCDCDC 100%);
+      background-image: linear-gradient(to bottom,#FAFAFA 0,#DCDCDC 100%);
+    }
+    a:hover {
+      color: #3f3f3f;
+      background: rgb(232,232,232);
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZThlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmOWY5ZjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+      background: -moz-linear-gradient(top,  rgba(232,232,232,1) 0%, rgba(249,249,249,1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,232,232,1)), color-stop(100%,rgba(249,249,249,1)));
+      background: -webkit-linear-gradient(top,  rgba(232,232,232,1) 0%,rgba(249,249,249,1) 100%);
+      background: -o-linear-gradient(top,  rgba(232,232,232,1) 0%,rgba(249,249,249,1) 100%);
+      background: -ms-linear-gradient(top,  rgba(232,232,232,1) 0%,rgba(249,249,249,1) 100%);
+      background: linear-gradient(top,  rgba(232,232,232,1) 0%,rgba(249,249,249,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#f9f9f9',GradientType=0 );
+      text-decoration:none;
+      border-color: rgb(170, 170, 170) rgb(170, 170, 170) rgb(153, 153, 153);
+      -webkit-box-shadow:  0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 3px rgb(255, 255, 255) inset;
+      -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 3px rgb(255, 255, 255) inset;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 3px rgb(255, 255, 255) inset;
+    }
+  }
+  .active > a {
+    color: #3f3f3f;
+    text-decoration: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+    background: #fff;
+    box-shadow: none;
+    &:after{
+      content:"";
+      background: url(../images/arrowdown.png) no-repeat;
+      width:11px;
+      height:8px;
+      position: absolute;
+      bottom:-8px;
+      left:50%;
+      margin-left:-5px;
+    }
+    &:hover {
+      border-color: rgb(170, 170, 170) rgb(170, 170, 170) rgb(153, 153, 153);
+      @include box-shadow(0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 3px rgb(255, 255, 255) inset);
+      background: #fff;
+      color: #3f3f3f;
+    }
+  }
+  .avatar {
+    position: relative;
+    padding-left:44px;
+  }
+  .navbar .nav .image {
+    position: absolute;
+    left:1px;
+    top:1px;
+    width:36px;
+    height:32px;
+  }
+  .dropdown-menu:before {
+    content: "";
+    position: absolute;
+    top:-13px !important;
+    background: url(../images/arrowup.png) no-repeat !important;
+    width:15px !important;
+    height:14px !important;
+    border:none !important;
+    z-index: 5;
+  }
+  li.dropdown ul a:hover {
+    color: rgb(63, 63, 63);
+    background: none;
+    text-decoration: underline;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.dropdown-menu {
+  font-size:12px;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 4px;
+  margin: 0;
+  list-style: none;
+  background: #efefef;
+  border: 1px solid #c4c4c4;
+  @include border-radius(2px);
+  @include box-shadow(0 1px 0px rgba(255, 255, 255, 1));
+  @include background-clip(padding-box);
+  a {
+    display: inline-block;
+    padding:5px 0 5px 5px;
+    clear: both;
+    font-weight: normal;
+    line-height: 14px;
+    color: #333;
+    white-space:normal;
+    width: 98%;
+  }
+  .menu {
+    border: 1px solid #c4c4c4;
+    @include border-radius(2px);
+    display: block;
+    float: left;
+    background: #fff;
+    padding:0 10px;
+    margin-bottom: 0;
+    min-width: 150px;
+    ul {
+      list-style:none;
+      margin: 0;
+    }
+    li {
+      border-bottom: 1px solid #ebebeb;
+      margin:0;
+      padding-bottom: 8px;
+      padding-top:10px;
+      line-height:14px;
+      width:100%;
+    }
+    ul li a span {
+      margin-right: 15px;
+    }
+  }
 }
 
 .right {

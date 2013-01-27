@@ -26,39 +26,64 @@
 
   <body class="loginPage">
 
-    <header id="header">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="brand" href="#">
-              Plataforma de Información Integral Contra la
-              Violencia Domestica
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div class="container-fluid">
+      <header id="header">
+        <div class="row-fluid">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <a class="brand" href="#">
+                  Plataforma de Información Integral Contra la
+                  Violencia Domestica
+                </a>
+              </div>
+            </div><!-- /navbar-inner -->
+          </div><!-- /navbar -->
+        </div><!-- End .row-fluid -->
+      </header><!-- End #header -->
+    </div><!-- End .container-fluid -->
 
-    <div class="container">
+
+    <section role="main container-fluid">
+
       <div class="loginContainer">
-        <form class="form-signin" action="#" id="loginForm">
-          <div class="form-row">
-            <label>Usuario</label>
-            <input type="text" class="input-block-level" placeholder="Nombre de usuario">
+        <form class="form-horizontal" action="dashboard.html" id="loginForm">
+
+          <div class="form-row row-fluid">
+            <div class="span12">
+              <div class="row-fluid">
+                <label class="form-label span12" for="username">Usuario</label>
+                <input type="text" class="input-block-level" placeholder="Nombre de usuario">
+              </div>
+            </div>
           </div>
-          <div class="form-row">
-            <label>Contraseña</label>
-            <input type="password" class="input-block-level" placeholder="Contraseña">
+
+          <div class="form-row row-fluid">
+            <div class="span12">
+              <div class="row-fluid">
+                <label>Contraseña</label>
+                <input type="password" class="input-block-level" placeholder="Contraseña">
+              </div>
+            </div>
           </div>
-          <div class="form-row form-actions">
-            <label class="controls left">
-              <input type="checkbox" value="remember-me"> Recordar sesión
-            </label>
-            <button class="btn btn-info right" type="submit" id="loginBtn">Entrar</button>
+
+          <div class="form-row row-fluid">                       
+            <div class="span12">
+              <div class="row-fluid">
+                <div class="form-actions">
+                  <div class="span12 controls">
+                    <input type="checkbox" value="remember-me" name="logged" /> Recordar sesión
+
+                    <button class="btn btn-info right" type="submit" id="loginBtn">Entrar</button>
+                  </div>
+                </div>
+              </div>
+            </div> 
           </div>
         </form>
       </div>
-    </div> <!-- /container -->
+    </section>
+
 
     <!-- Required Scripts -->
     <script src="js/jquery.min.js"></script>

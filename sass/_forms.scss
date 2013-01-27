@@ -101,7 +101,7 @@ aside[role=menu] {
   left: 50%;
   top: 50%;
   margin-left: -171px;
-  margin-top: -150px;
+  margin-top: -100px;
   border-radius: 2px;
   @include border-radius(2px);
   @include box-shadow(0px 0px 1px 1px);
@@ -128,7 +128,7 @@ aside[role=menu] {
   width: 100%;
 }
 .loginContainer:after {
-  @include transform(rotare(2deg));
+  @include transform(rotate(2deg));
   top: 0;
   z-index: -1;
 }
@@ -147,7 +147,11 @@ aside[role=menu] {
 .form-actions {
   border-bottom: 1px solid #E5E5E5;
   @include box-shadow(0 1px 0px rgba(229, 229, 229, 0.1));
+  margin: 0 -20px 0 -20px;
+}
 
+.form-horizontal {
+  margin-bottom: 0px;
 }
 
 .loginContainer{

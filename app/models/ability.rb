@@ -7,10 +7,11 @@ class Ability
     user ||= Usuario.new # guest user (not logged in)
 
     if user.rol.nil?
-        #can :manage, :all
+        can :create, :new, Usuario
+        can :read, Institucion
     end
 
-    if user.rol =="admin" 
+    if user.rol == "admin" 
         can :manage, :all
     end
 

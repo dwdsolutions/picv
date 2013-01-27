@@ -1,4 +1,26 @@
 <% content_for :content do %>
+
+<ul class="breadcrumb">
+                  <li>Estás en:</li>
+                  <li>
+                    <%= link_to expedientes_path do %>
+                        Expedientes
+                    <% end %>                  
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right">/</span>
+                    </span>
+                  </li>
+                  <li>
+                    <%= link_to expediente_path(@expediente) do %>
+                        Expediente No. <%= @expediente.id %>
+                    <% end %>                  
+                    <span class="divider">
+                      <span class="icon16 icomoon-icon-arrow-right">/</span>
+                    </span>
+                  </li>
+                  <li class="active">Editando Expediente</li>
+</ul>
+
 <h1>Editing expediente</h1>
 
 <%= render 'form' %>

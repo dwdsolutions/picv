@@ -48,6 +48,50 @@
     <%= collection_select(:expediente, :municipio_id, @municipios, :id, :nombre_completo, {:prompt => false })  %>
 
   </div>
+  <div class="field">
+    <%= f.label :zona %><br />
+    <%= select_tag(:zona, options_for_select([['Rural', 'Rural'], ['Urbana', 'Urbana'], ['Marginal', 'Marginal']])) %>
+  </div>
+  <div class="field">
+    <%= f.label :ocupacion %><br />
+    <%= f.text_field :ocupacion %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_trabajo %><br />
+    <%= f.text_field :lugar_trabajo %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_trabajo %><br />
+    <%= f.text_field :telefono_trabajo %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion_trabajo %><br />
+    <%= f.text_field :direccion_trabajo %>
+  </div>
+  <div class="field">
+    <%= f.label :nivel_educativo %><br />
+    <%= f.text_field :nivel_educativo %>
+  </div>
+  <div class="field">
+    <%= f.label :zona %><br />
+    <%= select_tag(:zona, options_for_select([['Rural', 'Rural'], ['Urbana', 'Urbana'], ['Marginal', 'Marginal']])) %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_familiar %><br />
+    <%= f.text_field :estado_familiar %>
+  </div>
+  <div class="field">
+    <%= f.label :sostenimiento_familiar %><br />
+    <%= f.text_field :sostenimiento_familiar %>
+  </div>
+  <div class="field">
+    <%= f.label :discapacidad_fisica %><br />
+    <%= f.text_field :discapacidad_fisica %>
+  </div>
+  <div class="field">
+    <%= f.label :discapacidad_mental %><br />
+    <%= f.text_field :discapacidad_mental %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

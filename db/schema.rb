@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126235052) do
+ActiveRecord::Schema.define(:version => 20130127003846) do
 
   create_table "departamentos", :force => true do |t|
     t.string   "nombre"
@@ -29,8 +29,19 @@ ActiveRecord::Schema.define(:version => 20130126235052) do
     t.integer  "edad"
     t.string   "sexo"
     t.integer  "municipio_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "zona"
+    t.string   "ocupacion"
+    t.string   "lugar_trabajo"
+    t.string   "telefono_trabajo"
+    t.string   "direccion_trabajo"
+    t.integer  "municipio_trabajo_id"
+    t.string   "nivel_educativo"
+    t.string   "estado_familiar"
+    t.string   "sostenimiento_familiar"
+    t.string   "discapacidad_fisica"
+    t.string   "discapacidad_mental"
   end
 
   add_index "expedientes", ["municipio_id"], :name => "index_expedientes_on_municipio_id"

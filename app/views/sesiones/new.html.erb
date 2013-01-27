@@ -20,7 +20,7 @@
       <div class="row-fluid">
         <div class="field">
           <%= label_tag :email %>
-          <%= text_field_tag :email, params[:email] %>
+          <%= text_field_tag :email, params[:email], :class => 'input-block-level' %>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="row-fluid">
         <div class="field">
           <%= label_tag :password %>
-          <%= password_field_tag :password %>
+          <%= password_field_tag :password, nil, :class => 'input-block-level' %>
         </div>
       </div>
     </div>
@@ -49,4 +49,5 @@
       </div>
     </div> 
   </div>
+
 </div>

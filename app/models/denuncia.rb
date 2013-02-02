@@ -20,8 +20,8 @@ class Denuncia < ActiveRecord::Base
   belongs_to :usuario
   belongs_to :expediente
   belongs_to :municipio_hechos, :foreign_key => "municipios_hechos_id"
-  belongs_to :municipio_agresor
-  belongs_to :municipio_trabajo_agresor
+  belongs_to :municipio_agresor, :class_name => "Municipio"
+  belongs_to :municipio_trabajo_agresor, :class_name => "Municipio"
   attr_accessible :ambito, :antecendente_criminal_agresor, :condicion_agresor, :descripcion, 
   :direccion_agresor, :direccion_hechos, :direccion_trabajo_agresor, 
   :edad_agresor, :fecha_agresion, :nivel_educativo_agresor, :nombre_agresor, 
